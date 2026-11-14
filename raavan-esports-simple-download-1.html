@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101010">
+<title>RAAVAN ESPORTS | Download App</title>
+<style>
+:root{--red:#e53935;--bg:#101010;--card:#191919;--text:#f5f5f5;--muted:#a6a6a6}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;display:flex;align-items:center;justify-content:center;padding:22px}
+main{width:100%;max-width:390px;text-align:center}
+.logo{width:88px;height:88px;margin:0 auto 20px;border:2px solid var(--red);border-radius:22px;display:grid;place-items:center;background:#1b1b1b;color:var(--red);font-size:54px;font-weight:900;font-style:italic;box-shadow:0 0 28px #e5393530}
+h1{font-size:27px;letter-spacing:1.5px;margin:0;font-weight:900}
+h1 span{color:var(--red)}
+.tagline{color:var(--muted);font-size:13px;margin:10px 0 28px}
+.card{background:var(--card);border:1px solid #303030;border-radius:16px;padding:22px}
+.app-name{font-size:17px;font-weight:700;margin:0 0 7px}
+.app-info{font-size:12px;color:var(--muted);margin:0 0 21px}
+.download{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;min-height:52px;border:0;border-radius:10px;background:var(--red);color:white;font-size:15px;font-weight:800;text-decoration:none;cursor:pointer;transition:transform .16s,background .16s,box-shadow .16s}
+.download:active{transform:scale(.96);background:#c62828}
+.download:hover{box-shadow:0 8px 22px #e5393540}
+.download svg{width:19px;height:19px}
+.note{font-size:11px;color:#858585;margin:14px 0 0}
+footer{font-size:11px;color:#696969;margin-top:25px}
+</style>
+</head>
+<body>
+<main>
+  <div class="logo" aria-label="Raavan Esports logo">R</div>
+  <h1>RAAVAN <span>ESPORTS</span></h1>
+  <p class="tagline">OFFICIAL ANDROID APPLICATION</p>
+  <section class="card">
+    <p class="app-name">RAAVAN ESPORTS App</p>
+    <p class="app-info">Tournaments • Matches • Wallet</p>
+    <a class="download" href="#" id="downloadBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/></svg>
+      DOWNLOAD APP
+    </a>
+    <p class="note">Android APK · Download link coming soon</p>
+  </section>
+  <footer>© <span id="year"></span> RAAVAN ESPORTS</footer>
+</main>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+const apkUrl=''; // Add your APK download URL here
+document.getElementById('downloadBtn').addEventListener('click',function(e){
+  if(apkUrl){this.href=apkUrl;return;}
+  e.preventDefault();
+  const old=document.getElementById('notice');if(old)old.remove();
+  const n=document.createElement('p');n.id='notice';n.textContent='APK download link will be available soon.';
+  n.style.cssText='color:#ff7774;font-size:12px;margin:13px 0 0';
+  document.querySelector('.card').appendChild(n);
+});
+</script>
+</body>
+</html>
